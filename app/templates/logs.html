@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ user.username }}!</h1>
+    {% for log_entry in log_entries %}
+    <h2>{{ log_entry.date }}</h2>
+    <p>
+        <span>
+            {{ log_entry.event.start_time }} - {{ log_entry.event.end_time }} |
+        </span>
+        <span>
+            {{ log_entry.event.title }} |
+        </span>
+        <span>
+            {{ log_entry.event.location }}
+        </span>
+    </p>
+    <p><i>{{ log_entry.event.text }} </i></p>
+    {% endfor %}
+{% endblock %}
